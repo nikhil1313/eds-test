@@ -13,11 +13,16 @@
 :root {
   /* colors */
   --background-color: white;
-  --light-color: #f8f8f8;
+  --light-color: #f4f6fb;
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --accent-color: #7c4dff;
+  --gradient-start: #3b63fb;
+  --gradient-end: #7c4dff;
+  --card-shadow: 0 2px 8px rgb(19 19 19 / 6%);
+  --card-shadow-hover: 0 12px 24px rgb(19 19 19 / 12%);
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -78,6 +83,8 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
 }
 
 body.appear {
@@ -109,6 +116,7 @@ h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: -0.01em;
   scroll-margin: 40px;
 }
 
@@ -158,6 +166,7 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 0.15s ease;
 }
 
 a:hover {
@@ -306,20 +315,76 @@ main > .section > div {
   padding: 0 24px;
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
-}
-
 @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
   }
 }
 
+/* intro / hero-style treatment for the page's first section */
+main > .section:first-of-type {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)), url('/images/hero-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+  background-position: center, bottom right;
+  margin-top: 0;
+  padding: 56px 0 64px;
+  border-radius: 0 0 32px 32px;
+  color: white;
+}
+
+main > .section:first-of-type h1,
+main > .section:first-of-type h2 {
+  color: white;
+}
+
+main > .section:first-of-type a:any-link {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 50%);
+}
+
+main > .section:first-of-type a:hover {
+  color: var(--light-color);
+  text-decoration-color: currentcolor;
+}
+
+main > .section:first-of-type a.button.primary,
+main > .section:first-of-type button.button.primary {
+  border-color: white;
+  background-color: white;
+  color: var(--text-color);
+}
+
+main > .section:first-of-type a.button.primary:hover,
+main > .section:first-of-type button.button.primary:hover {
+  border-color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
 /* section metadata */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+  background-image: url('/images/dot-grid.svg');
+  background-repeat: repeat;
   margin: 0;
-  padding: 40px 0;
+  padding: 48px 0;
+}
+
+main .section.highlight h2 {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+main .section.highlight h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
 }

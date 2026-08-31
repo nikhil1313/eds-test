@@ -4,6 +4,15 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  box-shadow: 0 1px 0 rgb(19 19 19 / 8%);
+}
+
+header .nav-brand,
+header .nav-brand a:any-link {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 header nav {
