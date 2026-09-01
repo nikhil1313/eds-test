@@ -50,14 +50,18 @@
   margin-bottom: 12px;
 }
 
-/* icons variant: icon badge in a soft tinted circle */
-.cards.icons .cards-card-body img {
-  width: 26px;
-  height: 26px;
-  padding: 15px;
-  margin-bottom: 16px;
+/* icons variant: symbol badge in a soft tinted circle */
+.cards.icons .cards-card-body p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 0 16px;
   border-radius: 50%;
-  background: var(--light-color);
+  background: linear-gradient(135deg, rgb(59 99 251 / 12%), rgb(124 77 255 / 12%));
+  font-size: 26px;
+  line-height: 1;
 }
 
 /* steps variant: numbered process flow */
