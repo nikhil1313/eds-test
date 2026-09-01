@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>fetch helper</title></head>
+<body>
+<script>
+(async () => {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get('file');
+  try {
+    const resp = await fetch(file);
+    const blob = await resp.blob();
+    const dataUrl = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+    if (window.opener) {
+      window.opener.postMessage({ type: 'fetched-image', file, dataUrl }, '*');
+      document.body.textContent = 'sent: ' + file + ' (' + dataUrl.length + ' chars)';
+    } else {
+      document.body.textContent = 'no opener';
+    }
+  } catch (e) {
+    if (window.opener) {
+      window.opener.postMessage({ type: 'fetch-error', file, error: e.message }, '*');
+    }
+    document.body.textContent = 'ERROR: ' + e.message;
+  }
+})();
+</script>
+</body>
+</html>
