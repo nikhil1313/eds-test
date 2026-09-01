@@ -85,6 +85,35 @@
   color: var(--accent-color);
 }
 
+/* reverse modifier: put the accent (positive) styling on the first column instead of the last */
+.columns.compare.reverse > div > div:first-child {
+  background: linear-gradient(135deg, rgb(59 99 251 / 6%), rgb(124 77 255 / 6%));
+  border: 1px solid rgb(124 77 255 / 25%);
+}
+
+.columns.compare.reverse > div > div:last-child {
+  background: var(--light-color);
+  border: none;
+}
+
+.columns.compare.reverse > div > div:first-child p:first-child strong {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+}
+
+.columns.compare.reverse > div > div:last-child p:first-child strong {
+  background: var(--dark-color);
+  color: white;
+}
+
+.columns.compare.reverse > div > div:first-child li::marker {
+  color: var(--accent-color);
+}
+
+.columns.compare.reverse > div > div:last-child li::marker {
+  color: var(--dark-color);
+}
+
 @media (width >= 900px) {
   .columns.compare > div {
     position: relative;
