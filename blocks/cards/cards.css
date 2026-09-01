@@ -44,6 +44,18 @@
   transform: scale(1.04);
 }
 
+.cards .cards-card-body code {
+  display: inline-block;
+  margin: 2px 0;
+  border-radius: 6px;
+  background: var(--light-color);
+  padding: 4px 10px;
+  color: var(--dark-color);
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .cards .cards-card-body img {
   width: 40px;
   height: 40px;
