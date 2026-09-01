@@ -15,15 +15,17 @@
       reader.onerror = reject;
       reader.readAsDataURL(blob);
     });
-    if (window.opener) {
-      window.opener.postMessage({ type: 'fetched-image', file, dataUrl }, '*');
+    const target = window.opener || (window.parent !== window ? window.parent : null);
+    if (target) {
+      target.postMessage({ type: 'fetched-image', file, dataUrl }, '*');
       document.body.textContent = 'sent: ' + file + ' (' + dataUrl.length + ' chars)';
     } else {
-      document.body.textContent = 'no opener';
+      document.body.textContent = 'no target';
     }
   } catch (e) {
-    if (window.opener) {
-      window.opener.postMessage({ type: 'fetch-error', file, error: e.message }, '*');
+    const target = window.opener || (window.parent !== window ? window.parent : null);
+    if (target) {
+      target.postMessage({ type: 'fetch-error', file, error: e.message }, '*');
     }
     document.body.textContent = 'ERROR: ' + e.message;
   }
