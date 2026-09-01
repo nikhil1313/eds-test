@@ -119,6 +119,12 @@
   font-size: var(--heading-font-size-xs);
 }
 
+.cards.steps .cards-card-body p:nth-child(2) {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
 @media (width >= 900px) {
   .cards.steps > ul > li:not(:last-child)::after {
     content: '';
