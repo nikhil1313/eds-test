@@ -62,6 +62,32 @@
   margin-bottom: 12px;
 }
 
+/* spectrum variant: colored top accent bar, cycling per card */
+.cards.spectrum > ul > li {
+  overflow: hidden;
+  border-top: 4px solid transparent;
+}
+
+.cards.spectrum > ul > li:nth-child(3n+1) {
+  border-top-color: #e91e8c;
+}
+
+.cards.spectrum > ul > li:nth-child(3n+2) {
+  border-top-color: #7c4dff;
+}
+
+.cards.spectrum > ul > li:nth-child(3n+3) {
+  border-top-color: #ff6b35;
+}
+
+.cards.spectrum.icons > ul > li:nth-child(3n+1) .cards-card-body p:first-child {
+  background: linear-gradient(135deg, rgb(233 30 140 / 12%), rgb(233 30 140 / 20%));
+}
+
+.cards.spectrum.icons > ul > li:nth-child(3n+3) .cards-card-body p:first-child {
+  background: linear-gradient(135deg, rgb(255 107 53 / 12%), rgb(255 107 53 / 20%));
+}
+
 /* icons variant: symbol badge in a soft tinted circle */
 .cards.icons .cards-card-body p:first-child {
   display: flex;
