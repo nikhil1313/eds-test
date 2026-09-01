@@ -43,3 +43,116 @@
 .cards > ul > li:hover img {
   transform: scale(1.04);
 }
+
+.cards .cards-card-body img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+/* icons variant: icon badge in a soft tinted circle */
+.cards.icons .cards-card-body img {
+  width: 26px;
+  height: 26px;
+  padding: 15px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--light-color);
+}
+
+/* steps variant: numbered process flow */
+.cards.steps > ul {
+  counter-reset: step;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.cards.steps > ul > li {
+  counter-increment: step;
+  position: relative;
+  flex: 1 1 220px;
+  overflow: visible;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cards.steps > ul > li:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.cards.steps .cards-card-body {
+  position: relative;
+  margin: 0;
+  padding-top: 64px;
+}
+
+.cards.steps .cards-card-body::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  box-shadow: var(--card-shadow);
+  color: white;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cards.steps .cards-card-body strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-color);
+  font-size: var(--heading-font-size-xs);
+}
+
+@media (width >= 900px) {
+  .cards.steps > ul > li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: calc(100% - 2px);
+    width: 36px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    opacity: 0.35;
+  }
+}
+
+/* stats variant: big-number callouts */
+.cards.stats > ul {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.cards.stats > ul > li {
+  border: none;
+  background: var(--light-color);
+  text-align: center;
+}
+
+.cards.stats .cards-card-body {
+  margin: 28px 20px;
+}
+
+.cards.stats .cards-card-body p:first-child {
+  margin: 0 0 8px;
+}
+
+.cards.stats .cards-card-body p:first-child strong {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: var(--heading-font-family);
+  font-size: 40px;
+  font-weight: 700;
+}

@@ -21,6 +21,7 @@
   --accent-color: #7c4dff;
   --gradient-start: #3b63fb;
   --gradient-end: #7c4dff;
+  --gradient-accent: #a855f7;
   --card-shadow: 0 2px 8px rgb(19 19 19 / 6%);
   --card-shadow-hover: 0 12px 24px rgb(19 19 19 / 12%);
 
@@ -323,7 +324,7 @@ main > .section > div {
 
 /* intro / hero-style treatment for the page's first section */
 main > .section:first-of-type {
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)), url('/images/hero-pattern.svg');
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 55%, var(--gradient-accent) 100%), url('/images/hero-pattern.svg');
   background-repeat: no-repeat;
   background-size: cover, cover;
   background-position: center, bottom right;
