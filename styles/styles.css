@@ -307,7 +307,7 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 16px 0;
 }
 
 main > .section > div {
@@ -329,8 +329,8 @@ main > .section:first-of-type {
   background-size: cover, cover;
   background-position: center, bottom right;
   margin-top: 0;
-  padding: 28px 0 32px;
-  border-radius: 0 0 24px 24px;
+  padding: 24px 0 28px;
+  border-radius: 0 0 20px 20px;
   color: white;
 }
 
@@ -372,7 +372,12 @@ main .section.highlight {
   background-image: url('/images/dot-grid.svg');
   background-repeat: repeat;
   margin: 0;
-  padding: 48px 0;
+  padding: 24px 0;
+}
+
+main .section.light > div > :first-child,
+main .section.highlight > div > :first-child {
+  margin-top: 0;
 }
 
 main .section.highlight h2 {
