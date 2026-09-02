@@ -194,6 +194,22 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
+header nav .nav-sections a[aria-current='page'] {
+  position: relative;
+  color: var(--accent-color);
+}
+
+header nav .nav-sections a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+
 @media (width >= 900px) {
   header nav .nav-sections {
     display: block;

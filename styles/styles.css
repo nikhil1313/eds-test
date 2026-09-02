@@ -329,13 +329,14 @@ main > .section:first-of-type {
   background-size: cover, cover;
   background-position: center, bottom right;
   margin-top: 0;
-  padding: 56px 0 64px;
-  border-radius: 0 0 32px 32px;
+  padding: 28px 0 32px;
+  border-radius: 0 0 24px 24px;
   color: white;
 }
 
 main > .section:first-of-type h1,
 main > .section:first-of-type h2 {
+  margin-top: 0;
   color: white;
 }
 
