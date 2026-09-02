@@ -204,3 +204,15 @@
   font-size: 40px;
   font-weight: 700;
 }
+
+/* five variant: force a tight 5-across row on wide screens */
+@media (width >= 900px) {
+  .cards.five > ul {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .cards.five .cards-card-body {
+    margin: 16px;
+  }
+}
