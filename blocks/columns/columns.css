@@ -41,7 +41,7 @@
 
 .columns.compare > div > div {
   border-radius: 12px;
-  padding: 28px;
+  padding: 20px 24px;
 }
 
 .columns.compare > div > div:first-child {
@@ -55,7 +55,7 @@
 
 .columns.compare > div > div p:first-child strong {
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   padding: 4px 14px;
   border-radius: 999px;
   font-size: var(--body-font-size-xs);
@@ -73,8 +73,17 @@
   color: white;
 }
 
+.columns.compare ul {
+  margin: 0;
+}
+
 .columns.compare li {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.columns.compare li:last-child {
+  margin-bottom: 0;
 }
 
 .columns.compare > div > div:first-child li::marker {
