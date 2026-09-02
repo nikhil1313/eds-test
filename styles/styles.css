@@ -365,6 +365,23 @@ main > .section:first-of-type button.button.primary:hover {
   color: var(--text-color);
 }
 
+/* pin the hero's CTA button to the right so it doesn't add extra
+   vertical height below the heading text */
+@media (width >= 900px) {
+  main > .section:first-of-type > div {
+    position: relative;
+    padding-right: 240px;
+  }
+
+  main > .section:first-of-type > div > p:has(> a.button.primary) {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+}
+
 /* section metadata */
 main .section.light,
 main .section.highlight {
