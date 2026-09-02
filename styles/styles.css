@@ -143,6 +143,20 @@ pre {
   font-size: var(--body-font-size-s);
 }
 
+/* inline code chip, anywhere in the content (tech tags, stage labels) */
+main p code,
+main li code {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  border-radius: 6px;
+  background: var(--light-color);
+  padding: 4px 10px;
+  color: var(--dark-color);
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 pre {
   padding: 16px;
   border-radius: 8px;
